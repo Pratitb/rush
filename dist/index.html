@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Tailwind Responsive Menu</title>
+</head>
+<body>
+    <!-- desktop -->
+    <header class="bg-cyan-600 min-h-full text-white p-4 px-6 flex justify-between items-center md:p-4 md:py-5 md:items-center md:justify-evenly xl:p-5">
+        <!-- logo -->
+        <div>
+            <a href="#" class="text-xl font-bold uppercase text-cyan-100 border-4 border-cyan-100 px-2 py-1 md:text-2xl xl:text-4xl">Rush.</a>
+        </div>
+        <!-- desktop menu  -->
+        <div class="hidden md:flex md:w-56 md:justify-between md:text-xl lg:text-xl lg:w-60 xl:w-72 xl:text-2xl 2xl:w-80">
+            <div>
+                <a href="#">Home</a>
+            </div>
+            <div>
+                <a href="#">About</a>
+            </div>
+            <div>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <!-- login buttons -->
+        <div class="hidden md:flex md:w-56 md:justify-between tracking-widest font-bold xl:w-56">
+            <div>
+                <a href="#" class="bg-slate-700 px-4 py-2 rounded-md md:py-3 hover:bg-white hover:text-black duration-200">Sign Up</a>
+            </div>
+            <div>
+                <a href="#" class="bg-white px-4 py-2 rounded-md text-black md:py-3 hover:bg-slate-700 hover:text-white duration-200">Log In</a>
+            </div>
+        </div>
+        <!-- hamburger menu svg -->
+        <div class="men_btn md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+        </div>
+    </header>
+    <!-- mobile menu -->
+    <div class="mob_men hidden flex-col justify-center items-center min-h-full bg-cyan-600 text-white text-3xl font-bold gap-y-8 py-8">
+        <div>
+            <a href="#" class="hover:bg-white px-4 py-2 rounded-md">Home</a>
+        </div>
+        <div>
+            <a href="#" class="hover:bg-white px-4 py-2 rounded-md">About</a>
+        </div>
+        <div>
+            <a href="#" class="hover:bg-white px-4 py-2 rounded-md">Contact</a>
+        </div>
+        <div class="flex gap-x-8 mt-8 text-2xl tracking-widest">
+            <div>
+                <a href="#" class="bg-slate-700 px-4 py-3 rounded-md">Sign Up</a>
+            </div>
+            <div>
+                <a href="#" class="bg-white px-4 py-3 text-black rounded-md">Log In</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const menuBtn = document.querySelector('.men_btn');
+        const mobMenu = document.querySelector('.mob_men');
+        menuBtn.addEventListener('click', function(){
+            mobMenu.classList.toggle('hidden');
+            mobMenu.classList.add('flex');
+        })
+    </script>
+</body>
+</html>
