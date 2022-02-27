@@ -55,38 +55,54 @@
         </div>
         <!-- hamburger menu svg -->
         <div class="men_btn md:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <!-- open btn -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 openBtn" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
+              <!-- close btn -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 closeBtn hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z" />
+            </svg>
         </div>
+        
+        
     </header>
     <!-- mobile menu -->
     <div class="mob_men hidden flex-col justify-center items-center min-h-full bg-cyan-600 text-white text-3xl font-bold gap-y-8 py-8">
         <div>
-            <a href="#" class="hover:bg-white px-4 py-2 rounded-md">Home</a>
+            <a href="#" class="hover:bg-white hover:text-black px-4 py-2 rounded-md">Home</a>
         </div>
         <div>
-            <a href="#" class="hover:bg-white px-4 py-2 rounded-md">About</a>
+            <a href="#" class="hover:bg-white hover:text-black px-4 py-2 rounded-md">About</a>
         </div>
         <div>
-            <a href="#" class="hover:bg-white px-4 py-2 rounded-md">Contact</a>
+            <a href="#" class="hover:bg-white hover:text-black px-4 py-2 rounded-md">Contact</a>
         </div>
         <div class="flex gap-x-8 mt-8 text-2xl tracking-widest">
             <div>
-                <a href="#" class="bg-slate-700 px-4 py-3 rounded-md">Sign Up</a>
+                <a href="#" class="bg-slate-700 hover:bg-white hover:text-black px-4 py-3 rounded-md">Sign Up</a>
             </div>
             <div>
-                <a href="#" class="bg-white px-4 py-3 text-black rounded-md">Log In</a>
+                <a href="#" class="bg-white hover:bg-slate-700 hover:text-white px-4 py-3 text-black rounded-md">Log In</a>
             </div>
         </div>
     </div>
     <script>
-        const menuBtn = document.querySelector('.men_btn');
         const mobMenu = document.querySelector('.mob_men');
-        menuBtn.addEventListener('click', function(){
+        const menuBtn = document.querySelector('.men_btn');
+        const open = document.querySelector('.openBtn');
+        const close = document.querySelector('.closeBtn');
+
+        function openClose(){
+            open.classList.toggle('hidden');
+            close.classList.toggle('hidden');
             mobMenu.classList.toggle('hidden');
-            mobMenu.classList.add('flex');
-        })
+            mobMenu.classList.toggle('flex');
+        }
+        /* event listeners */
+        menuBtn.addEventListener('click', openClose);
+        mobMenu.addEventListener('click', openClose);
+
     </script>
 </body>
 </html>
